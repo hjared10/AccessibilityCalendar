@@ -28,3 +28,5 @@ db.sequelize.sync().then(function() {
     console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
   });
 });
+
+//i am the hope of the universe.  i am the savior of the planet.  i am the alpha and the omega.  i am a super saiyan!
