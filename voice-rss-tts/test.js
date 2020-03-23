@@ -1,7 +1,7 @@
 var http = require('http');
-var tts = require('./index.js');
+var tts = require('./speech.js');
 
-var appt = 'Showtime will be in ';
+var appt = 'Your appointment will be in ';
 var cntdwn = '5 minutes.';
 
 http.createServer(function (request, response) {
