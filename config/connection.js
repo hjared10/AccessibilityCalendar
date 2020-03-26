@@ -16,10 +16,10 @@ module.exports = sequelize;
 
 var mysqlconfig = {
 	"connectionLimit": 10,
-	"host": "localhost",
-	"user": "root",
-	"password": "password",
-	"database": "scheduler"
+	"host": "j1r4n2ztuwm0bhh5.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+	"user": "	p8xo2kpzw1t8y5tb",
+	"password": "eb6iqsopc43lzi4m",
+	"database": "fp0ek73mpnh14exz"
 };
 
 module.exports = mysqlconfig;
