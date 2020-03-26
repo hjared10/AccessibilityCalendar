@@ -1,5 +1,9 @@
 require("date-format-lite"); // add date format
 var xssFilters = require('xss-filters');
+// var Sequelize = require("sequelize");
+// var env = process.env.NODE_ENV || "development";
+// var config = require(__dirname + "/../config/config.json")[env];
+// var db = {};
 
 class Storage {
 	constructor(connection) {
