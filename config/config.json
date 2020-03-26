@@ -1,0 +1,25 @@
+{
+    "development": {
+      "username": "root",
+      "password": "password",
+      "database": "scheduler",
+      "host": "localhost",
+      "dialect": "mysql",
+      "operatorsAliases": false
+    },
+    "test": {
+      "username": "root",
+      "database": "scheduler",
+      "host": "localhost",
+      "dialect": "mysql",
+      "operatorsAliases": false
+    },
+    "production": {
+      "username": "root",
+      "database": "scheduler",
+      "host": "localhost",
+      "dialect": "mysql",
+      "operatorsAliases": false
+    }
+  }
+  

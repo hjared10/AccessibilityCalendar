@@ -25,21 +25,13 @@ app.use(function(req, res, next) {
 // return static pages from "./public" directory
 app.use(express.static(__dirname + "/public"));
 
-
-
 // open connection to mysql
 const connectionPool = mysql.createPool(mysqlconfig);
 connectionPool.query = util.promisify(connectionPool.query);
 
-// add listeners to basic CRUD requests
-const Storage = require("./models/storage.js");
-const eventsStorage = new Storage(connectionPool);
-routes.setRoutes(app, "/events", eventsStorage);
-
 // add listeners to basic CRUD with recurring events support
-const RecurringStorage = require("./models/storage_recurring");
-const recurringEventsStorage = new RecurringStorage(connectionPool);
-routes.setRoutes(app, "/recurring_events", recurringEventsStorage)
+const RecurringStorage = require("./models/storage");
+routes.setRoutes(app, "/events", new RecurringStorage(connectionPool))
 
 // start server
 app.listen(port, () => {
