@@ -52,8 +52,7 @@ class Storage {
 				data.event_pid || 0,
 				data.event_length || 0,
 				data.rec_type
-			]);
-
+      ]);
 
 		// delete a single occurrence from  recurring series
 		let action = "inserted";

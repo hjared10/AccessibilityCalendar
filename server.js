@@ -32,7 +32,6 @@ connectionPool.query = util.promisify(connectionPool.query);
 // add listeners to basic CRUD with recurring events support
 const RecurringStorage = require("./models/storage");
 routes.setRoutes(app, "/events", new RecurringStorage(connectionPool))
-
 // start server
 app.listen(port, () => {
 	console.log("Server is running on port " + port + "...");

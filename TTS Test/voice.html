@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Test</title>
+  <meta charset='utf-8' />
+  <script src='voicerss-tts.min.js'></script>
+  <script>
+    function lastHope() {
+      console.log("alagadda");
+      display_ct();
+    }
+  </script>
+</head>
+<body>
+  <button id="agrippa">Click for TTS</button>
+  <span id='ct'></span>
+  <script>
+    document.getElementById("agrippa").onclick = function() {lastHope()};
+    function display_c(){
+      var refresh=1000; // Refresh rate in milli seconds
+      mytime=setTimeout('display_ct()',refresh)
+      console.log(mytime);
+      if(mytime % 10 === 0) {
+        VoiceRSS.speech({
+          key: '19c292543c504128ad82211c8e11a187',
+          src: 'Hello, world!',
+          hl: 'en-us',
+          r: 0,
+          c: 'mp3',
+          f: '44khz_16bit_stereo',
+          ssml: false,
+          b64: true
+        });
+      }
+    }
+
+    function display_ct() {
+      var x = new Date()
+      document.getElementById('ct').innerHTML = x;
+      display_c();
+    }
+  </script>
+  </body>
+</html>
