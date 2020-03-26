@@ -32,10 +32,10 @@ class Storage {
 			entry.start_date = entry.start_date.format("YYYY-MM-DD hh:mm");
 			entry.end_date = entry.end_date.format("YYYY-MM-DD hh:mm");
 		});
-
+    console.log(result);
 		return result;
 	}
-
+  
 	// create new event
 	async insert(data) {
 		let sql = "INSERT INTO ?? " +

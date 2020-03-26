@@ -5,7 +5,20 @@
 		<meta charset="utf-8">
 
 		<script src="https://cdn.dhtmlx.com/scheduler/edge/dhtmlxscheduler.js"></script>
-		<script src="https://cdn.dhtmlx.com/scheduler/edge/ext/dhtmlxscheduler_recurring.js"></script>
+    <script src="https://cdn.dhtmlx.com/scheduler/edge/ext/dhtmlxscheduler_recurring.js"></script>
+    <script src='../ttsTest/voicerss-tts.min.js'></script>
+    <script>
+      VoiceRSS.speech({
+        key: '19c292543c504128ad82211c8e11a187',
+        src: 'Hello, world!',
+        hl: 'en-us',
+        r: 0,
+        c: 'mp3',
+        f: '44khz_16bit_stereo',
+        ssml: false,
+        b64: true
+      });
+    </script>
 		<link rel="stylesheet" href="https://cdn.dhtmlx.com/scheduler/edge/dhtmlxscheduler_material.css" type="text/css" charset="utf-8">
 		<style>
 			html, body{
