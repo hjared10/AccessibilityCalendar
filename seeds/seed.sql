@@ -1,0 +1,1 @@
+INSERT INTO events (start_date, end_date, text) VALUES ('2019-2-28 12:00:00', '2019-2-28 13:00:00', 'Presentation');
