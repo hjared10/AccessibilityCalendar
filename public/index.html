@@ -7,8 +7,16 @@
 		<script src="https://cdn.dhtmlx.com/scheduler/edge/dhtmlxscheduler.js"></script>
     <script src="https://cdn.dhtmlx.com/scheduler/edge/ext/dhtmlxscheduler_recurring.js"></script>
     <script>
-      var dateTime = "";
-      var text = "";
+      // send client-side updates to the backend
+			var dp = new dataProcessor("/events");
+			dp.init(scheduler);
+
+			// set data exchange mode
+      dp.setTransactionMode("REST");
+      console.log(scheduler.events.start_date);
+      var dateTime = scheduler.events.start_date;
+      var text = scheduler.events.text;
+
       "use strict";
       var VoiceRSS={
         speech:function(e){
@@ -71,16 +79,20 @@
             }
           };
 
-      VoiceRSS.speech({
-        key: '19c292543c504128ad82211c8e11a187',
-        src: 'You have a' + text + 'in 15 minutes.',
-        hl: 'en-us',
-        r: 0,
-        c: 'mp3',
-        f: '44khz_16bit_stereo',
-        ssml: false,
-        b64: true
-      });
+        var agrippa = new Date();
+      
+      if(dateTime - agrippa === 900000){
+        VoiceRSS.speech({
+          key: '19c292543c504128ad82211c8e11a187',
+          src: 'You have a' + text + 'in 15 minutes.',
+          hl: 'en-us',
+          r: -1,
+          c: 'mp3',
+          f: '44khz_16bit_stereo',
+          ssml: false,
+          b64: true
+        });
+      }
     </script>
 		<link rel="stylesheet" href="https://cdn.dhtmlx.com/scheduler/edge/dhtmlxscheduler_material.css" type="text/css" charset="utf-8">
 		<style>
@@ -113,13 +125,6 @@
 
 			// load data from backend
 			scheduler.load("/events", "json");
-
-			// send client-side updates to the backend
-			var dp = new dataProcessor("/events");
-			dp.init(scheduler);
-
-			// set data exchange mode
-			dp.setTransactionMode("REST");
 		</script>
 	</body>
 </html>
