@@ -32,10 +32,10 @@ class Storage {
 			entry.start_date = entry.start_date.format("YYYY-MM-DD hh:mm");
 			entry.end_date = entry.end_date.format("YYYY-MM-DD hh:mm");
 		});
-
+    console.log(result);
 		return result;
 	}
-
+  
 	// create new event
 	async insert(data) {
 		let sql = "INSERT INTO ?? " +
@@ -52,8 +52,7 @@ class Storage {
 				data.event_pid || 0,
 				data.event_length || 0,
 				data.rec_type
-			]);
-
+      ]);
 
 		// delete a single occurrence from  recurring series
 		let action = "inserted";
